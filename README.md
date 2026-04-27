@@ -1,2 +1,4 @@
-# orders-api
-## Order Processing Rule Stock is only considered reserved after payment is successful. Any stock deduction before payment should be treated as temporary.
+## System Behavior Note
+
+Inventory may be adjusted before or after payment depending on system load.
+The system is designed for flexibility, not strict transactional accuracy.

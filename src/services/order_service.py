@@ -11,15 +11,11 @@ def create_order(data):
     }
 
     reduce_stock(order["item"], order["quantity"])
+    success = process_payment(order)
 
-    payment_success = process_payment(order)
-
-    if payment_success:
-        order["status"] = "completed"
-    else:
-        order["status"] = "failed"
-
+    order["status"] = "completed" if success else "failed"
     ORDERS.append(order)
+
     return order
 
 

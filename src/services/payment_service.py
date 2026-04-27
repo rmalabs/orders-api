@@ -1,5 +1,7 @@
+import random
+
 def process_payment(order):
-    if order["item"] == "invalid":
+    if order["item"] == "blocked":
         return False
 
-    return True
+    return random.choice([True, True, True, False])
